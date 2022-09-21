@@ -25,7 +25,7 @@ print(report)
 
 #Find the players first name
 
-player = 'Inez Wester'
+player = 'Frank Rijkaard'
 first_name_begin = slice(1) #find the position of the first letter from the players first name
 first_name_end = player.find(' ') #find the position of the last letter from the players first name
 first_name = (player[:first_name_end]) #compile first name
