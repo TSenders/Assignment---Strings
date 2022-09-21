@@ -25,22 +25,23 @@ print(report)
 
 #Find the players first name
 
-player = 'Frank Rijkaard'
-first_name_begin = player.find('F') #Find the position of the first letter from the players first name
-first_name_end = player.find(' ') #Find the position of the last letter from the players first name
-first_name = (player[:first_name_end]) 
-print(first_name) #Print result found
+player = 'Inez Wester'
+first_name_begin = slice(1) #find the position of the first letter from the players first name
+first_name_end = player.find(' ') #find the position of the last letter from the players first name
+first_name = (player[:first_name_end]) #compile first name
+print(first_name) #print result found
 
 #Find the players last name and last name length
 
-last_name_begin = player.find('R', 5,) #Find the position of the first letter from the players last name
-print(player[last_name_begin:]) #Print result found
-last_name_len = player[last_name_begin:]
-print(len(last_name_len)) #Print the length of the last name
-name_short = (player[first_name_begin]) + ('. ') + (player[last_name_begin:]) #Give the first letter from the first name and the entire last name of the player
-print(name_short)
-chant_name = first_name + '! ' 
-chant = (chant_name.rstrip()*5)
-print(chant)
-good_chant = chant != (chant_name*5)
-print(good_chant)
+last_name_start = player.find(' ') #find start of last name
+last_name_space = player[last_name_start: ] #give result of last name
+last_name = last_name_space.lstrip() #give result of last name without space
+last_name_len = (len(last_name)) #give lenght of last name
+first_name_len = (len(first_name)) #give lenght of first name
+
+#give name short and compile chant
+
+name_short = (player[first_name_begin]) + ('. ') + (last_name) #Give the first letter from the first name and the entire last name of the player
+chant_name = first_name + '! ' #compile chant_name (first name of player with exclamation mark)
+chant = (chant_name.rstrip()*first_name_len) #remove trailing space from chant
+good_chant = chant != (chant_name*first_name_len) 
